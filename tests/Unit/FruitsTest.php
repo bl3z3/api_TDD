@@ -32,11 +32,12 @@ class FruitsTest extends TestCase
      * Test: GET /api/fruits/.
      */
 
-    public function it_fetches_fruit()
+    public function it_fetches_fruits()
     {
         $this->seed('FruitsTableSeeder');
 
         $this->get('api/fruits')
+        	->assertStatus(200)
         	->assertJsonStructure([
         		'data' => [
         			'*' => [
@@ -45,6 +46,29 @@ class FruitsTest extends TestCase
         				'weight',
         				'delicious'
         			]
+        		]
+        	]);
+    }
+
+    /**
+     * @test
+     *
+     * Testt: GET /api/fruit/1
+     */
+
+    public function it_fetches_a_single_fruit()
+    {
+    	$this->seed('FruitsTableSeeder');
+
+    	$this->get('/api/fruit/1')
+    		->assertStatus(200)
+    		->assertJsonStructure([
+    			'data' => [
+    				'id',		
+    				'name',
+    				'color',
+    				'weight',
+    				'delicious'
         		]
         	]);
     }
