@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Dingo\Api\Routing\Helpers;
+use App\Http\Requests\StoreFruitRequest;
 use Illuminate\Http\Request;
 use App\Transformers\FruitsTransformer;
 use App\Fruit;
@@ -31,5 +32,14 @@ class FruitsController extends Controller
     	}
 
     	return $this->response->errorNotFound();
+    }
+
+    public function store(StoreFruitRequest $request)
+    {
+        if (Fruit::Create($request->all())) {
+            return $this->response()->created();
+        }
+
+        return $this->response->errorBadRequest();
     }
 }
