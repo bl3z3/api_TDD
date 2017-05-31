@@ -1,0 +1,356 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://localhost:8000/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>general</h1>
+<!-- START_39d63b10792f0c0ea1365e1d7bf70c67 -->
+<h2>/api/fruits</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost:8000//api/fruits" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000//api/fruits",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">{
+    "exception": null,
+    "headers": {},
+    "original": [
+        {
+            "id": 1,
+            "name": "apple",
+            "color": "green",
+            "weight": "150",
+            "delicious": "1",
+            "created_at": "2017-05-31 23:45:26",
+            "updated_at": "2017-05-31 23:45:26"
+        },
+        {
+            "id": 2,
+            "name": "banana",
+            "color": "yellow",
+            "weight": "116",
+            "delicious": "1",
+            "created_at": "2017-05-31 23:45:26",
+            "updated_at": "2017-05-31 23:45:26"
+        },
+        {
+            "id": 3,
+            "name": "strawberries",
+            "color": "red",
+            "weight": "12",
+            "delicious": "1",
+            "created_at": "2017-05-31 23:45:26",
+            "updated_at": "2017-05-31 23:45:26"
+        }
+    ]
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET /api/fruits</code></p>
+<p><code>HEAD /api/fruits</code></p>
+<!-- END_39d63b10792f0c0ea1365e1d7bf70c67 -->
+<!-- START_ae8405be74ebb24e3ab965dee6b11856 -->
+<h2>/api/fruit/{id}</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost:8000//api/fruit/{id}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000//api/fruit/{id}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">{
+    "exception": null,
+    "headers": {},
+    "original": {
+        "id": 3,
+        "name": "strawberries",
+        "color": "red",
+        "weight": "12",
+        "delicious": "1",
+        "created_at": "2017-05-31 23:45:26",
+        "updated_at": "2017-05-31 23:45:26"
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET /api/fruit/{id}</code></p>
+<p><code>HEAD /api/fruit/{id}</code></p>
+<!-- END_ae8405be74ebb24e3ab965dee6b11856 -->
+<!-- START_d5417ec5d425f04b71e9a4e9987c8295 -->
+<h2>API Login, on success return JWT Auth token</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost:8000//api/authenticate" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000//api/authenticate",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST /api/authenticate</code></p>
+<!-- END_d5417ec5d425f04b71e9a4e9987c8295 -->
+<!-- START_39798dab89951f0e0c3fc59a53f859e5 -->
+<h2>Logout</h2>
+<p>Invalidate the token, so user cannot use it anymore
+They have to relogin to get a  new token</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost:8000//api/logout" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000//api/logout",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST /api/logout</code></p>
+<!-- END_39798dab89951f0e0c3fc59a53f859e5 -->
+<!-- START_fde36329ab58ad5d6ab50b7704de548b -->
+<h2>Refresh the token</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost:8000//api/token" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000//api/token",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET /api/token</code></p>
+<p><code>HEAD /api/token</code></p>
+<!-- END_fde36329ab58ad5d6ab50b7704de548b -->
+<!-- START_a5d7bfde9c5e33e7c8fd6f07a11939b5 -->
+<h2>Returns the authenticated user</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost:8000//api/authenticated_user" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000//api/authenticated_user",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET /api/authenticated_user</code></p>
+<p><code>HEAD /api/authenticated_user</code></p>
+<!-- END_a5d7bfde9c5e33e7c8fd6f07a11939b5 -->
+<!-- START_7911c9ccc13ab3b52c29a3f7473bfa19 -->
+<h2>/api/fruits</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost:8000//api/fruits" \
+-H "Accept: application/json" \
+    -d "name"="enim" \
+    -d "color"="enim" \
+    -d "weight"="263" \
+    -d "delicious"="1" \
+</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000//api/fruits",
+    "method": "POST",
+    "data": {
+        "name": "enim",
+        "color": "enim",
+        "weight": 263,
+        "delicious": true
+},
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST /api/fruits</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>color</td>
+<td>string</td>
+<td>required</td>
+<td>Only alphabetic characters allowed</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>numeric</td>
+<td>required</td>
+</tr>
+<tr>
+<td>delicious</td>
+<td>boolean</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<!-- END_7911c9ccc13ab3b52c29a3f7473bfa19 -->
+<!-- START_e839e2c58cf3045a3add8543207c9de4 -->
+<h2>Remove the specified fruit.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE "http://localhost:8000//api/fruits/{id}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000//api/fruits/{id}",
+    "method": "DELETE",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE /api/fruits/{id}</code></p>
+<!-- END_e839e2c58cf3045a3add8543207c9de4 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

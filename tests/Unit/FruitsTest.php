@@ -101,4 +101,22 @@ class FruitsTest extends TestCase
 
         $this->post('api/fruits', $fruit, $this->headers($user))->assertStatus(201);
     }
+
+    /**
+     * @test
+     *
+     * Test: DELETE /api/fruits/$id.
+     */
+
+    public function it_deletes_a_fruit()
+    {
+        $user = factory(\App\User::class)->create(['password'=> bcrypt('foo')]);
+
+        $fruit = \App\Fruit::create(['name' => 'peache', 'color' => 'peache', 'weight' => 125, 'delicious' => true]);
+
+        $response = $this->delete("api/fruits/$fruit->id", [], $this->headers($user));
+        
+        $response->assertStatus(204);
+    }
+
 }

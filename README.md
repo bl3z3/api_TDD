@@ -11,3 +11,8 @@ Use of fractacl/transformers to conceal the DB architecture from the client
 
 Json web tokens for authentication
 [Tymon/JWT rep](https://github.com/tymondesigns/jwt-auth)
+
+API doc generator
+`composer require mpociot/laravel-apidoc-generator`
+API documentation in public/docs
+More info [Laravel Doc](https://github.com/mpociot/laravel-apidoc-generator)
